@@ -17,4 +17,3 @@ for n in the_list:
 print()
 for x in the_list:
     print(x)
-        
