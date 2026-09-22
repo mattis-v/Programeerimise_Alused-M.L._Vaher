@@ -11,9 +11,8 @@ the_list = [
     430158267,
 ]
 
+b = 0
 for n in the_list:
-    if n > 1738152473:
-        print(n >= 1738152473)
-print()
-for x in the_list:
-    print(x)
+    if n > b:
+        b = n
+print(b)
