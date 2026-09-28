@@ -2,22 +2,40 @@
 Create a function that takes a list of numbers and returns the second largest number.
 '''
 
-def second_largest_sorted(lst):
-    sorted_lst = sorted(lst, reverse=True)
-    return sorted_lst[1]
+list1 = [8623,62,8623,453,476,890,1102,1102,11]
+list2 = [-21,-100,69,420,67]
+list3 = [-21,-100,-69,-420,-67]
+list4 = []
 
-def second_largest_sort(lst):
-    lst.sort(reverse=True)
-    return lst[1]
-
-
-
-# Sellel meetodil on loogika viga- milles see seisneb?
 def second_largest_manual_sort(lst):
-    last_largest = 0
-    largest = 0
+    # initial setpoint in negative infity for variables.
+    # setpoint=0 would not work as intended with negative values in list.
+    
+    last_largest = float('-inf')
+    largest = float('-inf')
+    
+    # determines the largest number in list.
     for number in lst:
         if number > largest:
-            last_largest = largest
             largest = number
+
+    # determines the second largest number in list.
+    # second largest must be larger than number, smaller than largest and not largest.
+    for number in lst:
+        if number > last_largest and last_largest < largest and number != largest:
+            last_largest = number
+    
+    # incase list contains fewer than 2 numbers, otherwise would return -inf as second largest.
+    if last_largest == float('-inf'):
+        return("incomplete list")
+    
+
     return last_largest
+
+print("From list 1: ",second_largest_manual_sort(list1),"\n")
+
+print("From list 2: ",second_largest_manual_sort(list2),"\n")
+
+print("From list 3: ",second_largest_manual_sort(list3),"\n")
+
+print("From list 4: ",second_largest_manual_sort(list4))
