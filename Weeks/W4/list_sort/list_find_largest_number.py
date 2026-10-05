@@ -1,7 +1,6 @@
 '''
 Create a function that takes a list of numbers and returns the second largest number.
 '''
-# import random
 
 list1 = [8623,62,8623,453.67,476,890.01,1102,3102,11,89,56,2112.5]
 list2 = [21]
@@ -42,4 +41,4 @@ print("From list 3: ",second_largest_manual_sort(list3),"\n")
 
 print("From list 4: ",second_largest_manual_sort(list4),"\n")
 
-print("From list 4: ",second_largest_manual_sort(list5))
+print("From list 4: ",second_largest_manual_sort(list5),"\n")
