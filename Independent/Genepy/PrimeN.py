@@ -1,19 +1,22 @@
 from cmath import sqrt
-from math import ceil
 
 def is_prime(n):
-    if n > 2:
-        if n % ceil(sqrt(n).real) == 0:
-            return False
-        for i in range(2,ceil(sqrt(n).real)):
-            if n % i == 0:
-                return False
-    elif n < 1 or n == 1:
+    i = 1
+    if n <= 1:
         return False
+    elif n == 2:
+        return True
+    elif n % 2 == 0:
+        return False
+    while True:
+        i += 1
+        if n % i == 0:
+            return False
+        elif i == sqrt(n).real:
+            return False
+        elif i >= sqrt(n).real:
+            break
     return True
 
-for n in range(1,100):
-    print(n,is_prime(n))
-
-print(is_prime(3))
-print(ceil(sqrt(4).real))
+for x in range(1000001):
+    print(x,is_prime(x))
