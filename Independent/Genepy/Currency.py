@@ -11,6 +11,7 @@ def how_to_pay(amount,currency):
             lst.append(coin)
             difference -= coin
 
+        
     for key in csorted:
         x = 0
         for coin in lst:
@@ -23,5 +24,5 @@ def how_to_pay(amount,currency):
 
 
 euro = [1, 2, 5, 10, 20, 50, 100, 200, 500]
-x = 1111
+x = 1112
 print(how_to_pay(x,euro))
